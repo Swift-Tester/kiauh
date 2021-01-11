@@ -133,7 +133,10 @@ get_user_selections_dwc2(){
 #############################################################
 
 get_dwc2_ver(){
-  DWC2_VERSION=$(curl -s https://api.github.com/repositories/28820678/releases/latest | grep tag_name | cut -d'"' -f4)
+  #get latest Duet Web Control version
+#  DWC2_VERSION=$(curl -s https://api.github.com/repositories/28820678/releases/latest | grep tag_name | cut -d'"' -f4)
+  #get Duet Web Control v2.1.7 version
+  DWC2_VERSION=$(curl -s https://api.github.com/repos/Duet3D/DuetWebControl/releases/26221290 | grep tag_name | cut -d'"' -f4)
 }
 
 dwc2_setup(){
