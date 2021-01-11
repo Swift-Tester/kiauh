@@ -162,8 +162,10 @@ dwc2_setup(){
 }
 
 download_dwc2_webui(){
-  #get Duet Web Control
-  GET_DWC2_URL=$(curl -s https://api.github.com/repositories/28820678/releases/latest | grep browser_download_url | cut -d'"' -f4)
+  #get latest Duet Web Control 
+#  GET_DWC2_URL=$(curl -s https://api.github.com/repositories/28820678/releases/latest | grep browser_download_url | cut -d'"' -f4)
+  #get Duet Web Control v2.1.7
+  GET_DWC2_URL=$(curl -s https://api.github.com/repos/Duet3D/DuetWebControl/releases/26221290 | grep browser_download_url | cut -d'"' -f4)
   status_msg "Downloading DWC2 Web UI ..."
   [ ! -d $DWC2_DIR ] && mkdir -p $DWC2_DIR
   cd $DWC2_DIR && wget $GET_DWC2_URL
